@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS `customers`;
+ DROP TABLE IF EXISTS `customers`;
 
 CREATE TABLE IF NOT EXISTS `customers` (
     `id` INT(11) NOT NULL AUTO_INCREMENT,
