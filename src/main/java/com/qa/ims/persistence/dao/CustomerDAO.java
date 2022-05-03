@@ -132,6 +132,8 @@ public class CustomerDAO implements Dao<Customer> {
 	 * 
 	 * @param id - id of the customer
 	 */
+	
+	// IMS 12
 	@Override
 	public int delete(long id) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
