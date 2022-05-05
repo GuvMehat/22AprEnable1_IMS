@@ -6,7 +6,6 @@ INSERT INTO `items` (`name`, `value`) VALUES ('book', '19.99');
 INSERT INTO `items` (`name`, `value`) VALUES ('case', '5.50');
 INSERT INTO `items` (`name`, `value`) VALUES ('pen', '0.99');
 
-
 INSERT INTO `orders` (`customer_id`, `cost`) VALUES (1, '0.0');
 
 

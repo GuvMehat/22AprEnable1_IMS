@@ -6,6 +6,7 @@ INSERT INTO `ims`.`items` (`item_name`, `value`) VALUES ('case', '5.50');
 INSERT INTO `ims`.`items` (`item_name`, `value`) VALUES ('pen', '0.99');
 
 
-INSERT INTO `ims`.`orders` (`customer_id`, `cost`) VALUES ('1', '0.0'),
-INSERT INTO `ims`.`orders` (`customer_id`, `cost`) VALUES ('2', '0.0');
+INSERT INTO `ims`.`orders` (`customer_id`, `cost`) VALUES (1, '0.0');
 
+
+INSERT INTO `ims`.`orders_items` (`order_id`, `item_id`) VALUES (1, 1);
