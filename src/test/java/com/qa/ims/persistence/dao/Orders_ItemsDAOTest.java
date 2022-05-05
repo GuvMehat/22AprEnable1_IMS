@@ -1,0 +1,54 @@
+package com.qa.ims.persistence.dao;
+
+import static org.junit.Assert.assertEquals;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import com.qa.ims.persistence.domain.Orders_Items;
+import com.qa.ims.utils.DBUtils;
+
+
+public class Orders_ItemsDAOTest {
+
+	private final Orders_ItemsDAO DAO = new Orders_ItemsDAO();
+
+
+
+	@Before
+	public void setup() {
+		DBUtils.getInstance().init("src/test/resources/sql-schema.sql", "src/test/resources/sql-data.sql");
+	}
+	
+	@Test
+	public void testReadLatest() {
+		assertEquals(new Orders_Items(1L, 1L, 1L), DAO.readLatest());
+	}
+	
+	@Test
+	public void testReadAll() {
+		List<Orders_Items> expected = new ArrayList<>();
+		expected.add(new Orders_Items(1L, 1L, 1L));
+		assertEquals(expected, DAO.readAll());
+	}
+
+	@Test
+	public void testAdd() {
+		final Orders_Items created = new Orders_Items(2L, 1L, 3L);
+		Orders_Items results = DAO.add(created.getOrderId(), created.getItemId());
+		assertEquals(created, results);
+		assertEquals(created.getId(), results.getId());
+		System.out.println(results.toString());
+	}
+	
+	@Test
+	public void testDelete() {
+		final Orders_Items created = new Orders_Items(2L, 1L);
+		assertEquals(0, DAO.delete(created.getOrderId(), created.getItemId()));
+	}
+	
+	
+}
