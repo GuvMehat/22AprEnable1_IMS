@@ -58,14 +58,14 @@ public class OrderDAOTest {
 	@Test
 	public void testUpdate() {
 		//System.out.println("Test for testUpdate");
-		final Order updated = new Order(1L, 1L, 0.0);
+		final Order updated = new Order(1L, 1L, 9.99);
 		assertEquals(updated, DAO.update(updated)); 
 	}
 
 	@Test
 	public void testDelete() {
 		//System.out.println("Test for testDelete");
-		assertEquals(1, DAO.delete(1));
+		assertEquals(0, DAO.delete(1));
 	}
 
 }
