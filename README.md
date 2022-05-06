@@ -1,7 +1,9 @@
-Coverage: 34%
+Coverage: 74.5%
 # Project Title
 
-One Paragraph of project description goes here
+A Project using the Java language to create an IMS. Interliking the use of MySQL with JDBC to have a woeking .jar file which the user can use to manage their inventory. 
+
+Link to Jira : https://guv-qa.atlassian.net/jira/software/projects/IMS/boards/2 
 
 ## Getting Started
 
@@ -9,7 +11,10 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+What things you need to install the software and how to install them, Download the correct edition for your computer operating system
+Git Bash : https://git-scm.com/downloads
+Java 16 : https://www.oracle.com/java/technologies/javase/jdk16-archive-downloads.html
+Maven : https://maven.apache.org/download.cgi
 
 ```
 Give examples
@@ -19,31 +24,46 @@ Give examples
 
 A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
+1. Open Git Bash
 
-```
-Give the example
-```
+2. In the Git Bash terminal go to the directory which contains the file.
+	$ cd "   your file directory    "/22AprEnable1_IMS/
 
-And repeat
+3. type in the code, this will generate the fat jar from the code. 
+	$ mvm clean package
 
-```
-until finished
-```
+4. now go into the target folder 
+	$ cd "   your file directory    "/22AprEnable1_IMS/target
+
+3. using the command below run ims-1.0.0-jar-with-dependencies.jar file
+	$ java -jar ims-1.0.0-jar-with-dependencies.jar
+
 
 End with an example of getting some data out of the system or using it for a little demo
 
+To add a customer folow the next steps
+1- Type in "Customer"
+2- Type in "Create"
+3- Enter the desired first name
+4- Enter the desired surname
+
+Now to check if the customer has been added 
+1- Type "Read" 
+This should display the new customer that has been added
+
+
 ## Running the tests
 
-Explain how to run the automated tests for this system. Break down into which tests and what they do
+To run the test open Git bash and enter the following line
+	$ cd "   your file directory    "/22AprEnable1_IMS
+		This will open the directory which contains all files
 
 ### Unit Tests 
 
-Explain what these tests test, why and how to run them
-
-```
-Give an example
-```
+This can be used to run Unit test
+- To run all test
+	$ mvn test
+Running this in Git Bash will use the maven software to run all test which are in the file.
 
 ### Integration Tests 
 Explain what these tests test, why and how to run them
@@ -74,7 +94,8 @@ We use [SemVer](http://semver.org/) for versioning.
 
 ## Authors
 
-* **Chris Perrins** - *Initial work* - [christophperrins](https://github.com/christophperrins)
+* **Chris Perrins** - *Initial work* - [christophperrins](https://github.com/christophperrins
+* **Gurveer Mehat** - *Addtional work* - [guvmehat](https://github.com/guvmehat
 
 ## License
 
@@ -84,6 +105,5 @@ This project is licensed under the MIT license - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+Many thanks to Richard Mansworth for helping me troubleshoot problems with the program and QA Acadamy for providing the training needed to complete the ims.
+
