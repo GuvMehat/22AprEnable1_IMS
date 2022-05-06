@@ -47,7 +47,7 @@ public class Orders_ItemsDAOTest {
 	@Test
 	public void testDelete() {
 		final Orders_Items created = new Orders_Items(2L, 1L);
-		assertEquals(0, DAO.delete(created.getOrderId()));
+		assertEquals(0, DAO.delete(created.getOrderId(), created.getItemId()));
 	}
 	
 	

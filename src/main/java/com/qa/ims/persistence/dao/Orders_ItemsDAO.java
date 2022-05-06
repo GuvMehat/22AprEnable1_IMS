@@ -93,11 +93,13 @@ public class Orders_ItemsDAO {
 	 * 
 	 * @param orders_items - takes in a orders_items object. id will be ignored
 	 */
-	public int delete(Long ID) {
+	public int delete(Long orderID, Long itemID) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				Statement statement = connection.createStatement();) {
 			return statement.executeUpdate(
-					"DELETE FROM orders_items WHERE id" + ID );
+					"DELETE FROM orders_items WHERE id IN (SELECT id FROM (SELECT id FROM orders_items WHERE order_id = '"
+							+  orderID + "' AND item_id = '" + itemID
+							+ "' LIMIT 1) AS a)");
 		} catch (Exception e) {
 			LOGGER.debug(e);
 			LOGGER.error(e.getMessage());
