@@ -116,9 +116,9 @@ public class ItemsDAO implements Dao<Items>{
 	@Override
 	public Items update(Items item) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
-				PreparedStatement statement = connection
-						.prepareStatement("UPDATE items SET name ='" + item.getName() + "', value ='"
-					+ item.getValue() + "' WHERE id =" + item.getId());) {
+				Statement statement = connection.createStatement();) {
+			statement.executeUpdate("UPDATE items SET name ='" + item.getName() + "', value ='"
+					+ item.getValue() + "' WHERE id =" + item.getId());
 			return readItem(item.getId());
 		} catch (Exception e) {
 			LOGGER.debug(e);
@@ -135,9 +135,8 @@ public class ItemsDAO implements Dao<Items>{
 	@Override
 	public int delete(long id) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
-				PreparedStatement statement = connection.prepareStatement("DELETE FROM items WHERE id = " + id);) {
-			statement.setLong(1, id);
-			return statement.executeUpdate();
+				Statement statement = connection.createStatement();) {
+			return statement.executeUpdate("DELETE FROM items WHERE id = " + id);
 		} catch (Exception e) {
 			LOGGER.debug(e);
 			LOGGER.error(e.getMessage());
