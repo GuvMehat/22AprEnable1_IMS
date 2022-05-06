@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
 	`customer_id` INT(11) NOT NULL ,
     `cost` DOUBLE(10) DEFAULT NULL,
     PRIMARY KEY (`id`),
-    FOREIGN KEY (`customer_id`) REFERENCES customers(`id`)
+    FOREIGN KEY (`customer_id`) REFERENCES customers(`id`) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS `orders_items` (
@@ -36,6 +36,6 @@ CREATE TABLE IF NOT EXISTS `orders_items` (
 	`order_id` INT(11) NOT NULL,
 	`item_id` INT(11) NOT NULL,
 	PRIMARY KEY(`id`),
-	FOREIGN KEY (`order_id`) REFERENCES orders(id),
-	FOREIGN KEY (`item_id`) REFERENCES items(id)
+	FOREIGN KEY (`order_id`) REFERENCES orders(id) ON DELETE CASCADE,
+	FOREIGN KEY (`item_id`) REFERENCES items(id) ON DELETE CASCADE
 );
