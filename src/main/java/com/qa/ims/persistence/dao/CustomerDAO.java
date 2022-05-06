@@ -66,6 +66,8 @@ public class CustomerDAO implements Dao<Customer> {
 	 * 
 	 * @param customer - takes in a customer object. id will be ignored
 	 */
+	
+	// IMS 9
 	@Override
 	public Customer create(Customer customer) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
@@ -81,7 +83,8 @@ public class CustomerDAO implements Dao<Customer> {
 		}
 		return null;
 	}
-
+	
+	// IMS 10
 	@Override
 	public Customer read(Long id) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
@@ -105,6 +108,8 @@ public class CustomerDAO implements Dao<Customer> {
 	 *                 update that customer in the database
 	 * @return
 	 */
+	
+	// IMS 11
 	@Override
 	public Customer update(Customer customer) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
@@ -127,6 +132,8 @@ public class CustomerDAO implements Dao<Customer> {
 	 * 
 	 * @param id - id of the customer
 	 */
+	
+	// IMS 12
 	@Override
 	public int delete(long id) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
