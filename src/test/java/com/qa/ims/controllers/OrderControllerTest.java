@@ -44,7 +44,7 @@ public class OrderControllerTest {
 
 	@InjectMocks
 	private OrderController controller;
-
+ 
 	@Test
 	public void testReadAll() {
 		List<Order> expected = new ArrayList<>();
@@ -52,8 +52,8 @@ public class OrderControllerTest {
 		expected.add(new Order(2L, 3L, 0.0));
 
 		List<Customer> customers = new ArrayList<>();
-		customers.add(new Customer(1L, "chetan", "pardeep"));
-		customers.add(new Customer(2L, "Soham", "pardeep"));
+		customers.add(new Customer(1L, "Guv", "Mehat"));
+		customers.add(new Customer(2L, "Hermun", "Mehat"));
 
 		List<Orders_Items> ois = new ArrayList<>();
 		ois.add(new Orders_Items(1L, 1L, 4L));
