@@ -58,6 +58,6 @@ public class ItemsDAOTest {
 	
 	@Test
 	public void testDelete() {
-		assertEquals(0, DAO.delete(1L));
+		assertEquals(1, DAO.delete(3L));
 	}
 }
